@@ -21,6 +21,18 @@ public:
 	// Sets default values for this character's properties
 	AMainCharacter();
 
+	UPROPERTY(BlueprintReadWrite, EditInstanceOnly, Category = "Main|Inventory")
+	TSubclassOf<UInventoryWidget> InventoryWidgetClass;
+
+	UPROPERTY(BlueprintReadOnly, Category = "Main|Inventory")
+	UInventoryWidget* InventoryWidget;
+
+	UFUNCTION(BlueprintCallable, Category = "MainCharacter|Inventory")
+	void ShowInventory();
+
+	UFUNCTION(BlueprintCallable, Category = "MainCharacter|Inventory")
+	void HideInventory();
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

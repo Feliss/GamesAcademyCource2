@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Widgets/InventoryWidget.h"
 #include "BaseCharacter.generated.h"
 
 

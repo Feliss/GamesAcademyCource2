@@ -11,11 +11,35 @@ AMainCharacter::AMainCharacter()
 
 }
 
+void AMainCharacter::ShowInventory()
+{
+	if (InventoryWidget != nullptr)
+	{
+		InventoryWidget->ShowForCharacter(this);
+	}
+}
+
+void AMainCharacter::HideInventory()
+{
+	if (InventoryWidget != nullptr)
+	{
+		InventoryWidget->Hide();
+	}
+}
+
 // Called when the game starts or when spawned
 void AMainCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 
+	if (InventoryWidgetClass.Get() != nullptr)
+	{
+		APlayerController* PlayerController = Cast<APlayerController>(this->GetController());
+		if (PlayerController != nullptr)
+		{
+			InventoryWidget = CreateWidget<UInventoryWidget>(PlayerController, InventoryWidgetClass);
+		}
+	}
 }
 
 // Called every frame
