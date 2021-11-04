@@ -58,4 +58,6 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Math")
+	static FQuat RotatorToQuat(const FRotator& Rotator);
 };

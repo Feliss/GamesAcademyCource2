@@ -18,6 +18,9 @@ void ABaseCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 
+	FRotator Angle3D;
+	FQuat Angle3DAsQuat = Angle3D.Quaternion();
+	Angle3D = Angle3DAsQuat.Rotator();
 }
 
 // Called every frame
@@ -32,6 +35,11 @@ void ABaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+}
+
+FQuat ABaseCharacter::RotatorToQuat(const FRotator& Rotator)
+{
+	return Rotator.Quaternion();
 }
 
 float ABaseCharacter::TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, AActor* DamageCauser)
