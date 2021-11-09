@@ -24,6 +24,10 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Main|Characteristics")
 	float DebuffDefence;
 
+	// Max Hit Point of chacter
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Main|Characteristics")
+	float MaxHitPoints;
+
 	// Hit Point of chacter
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Main|Characteristics")
 	float HitPoints;
